@@ -21,13 +21,26 @@ app.use(express.json());
 app.use(morgan('combined'));
 
 app.engine(
+
+
+
+
+
+
+
+
+
+
+
+
+    
     'hbs',
     handlebars({
         extname: '.hbs',
     }),
 );
-app.set(            'view engine', 'hbs');
-app.set('views', path.join(                 __dirname, 'resources/views'));
+app.set('view engine', 'hbs');
+app.set('views', path.join(__dirname, 'resources/views'));
 
 //Truyền express sang func routes
 route(app);
