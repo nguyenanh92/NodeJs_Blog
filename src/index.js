@@ -6,6 +6,10 @@ const app = express();
 const port = 3000;
 
 const route = require('./routes');
+const db = require('./config/db');
+
+//Connect to DB
+db.connect();
 
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -29,7 +33,6 @@ app.engine(
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'resources/views'));
 
-//Truyền express sang func routes
 route(app);
 
 app.listen(port, () => console.log(`Run : http://localhost:${port}`));
