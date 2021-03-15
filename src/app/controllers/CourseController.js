@@ -1,4 +1,4 @@
-const Course = require('./models/Course');
+const Course = require('../models/Course');
 const { MongooseToOject } = require('../../util/mongoose');
 class CourseController {
     //[GET] /details
